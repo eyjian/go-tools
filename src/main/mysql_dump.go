@@ -64,9 +64,44 @@ func main() {
 		os.Exit(1)
 	}
 
-	// parameter - batch
+	// dbip
+	if len(*dbip) == 0 {
+		fmt.Fprintf(os.Stderr, "Parameter[-fields] not set\n\n")
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	// dbuser
+	if len(*dbuser) == 0 {
+		fmt.Fprintf(os.Stderr, "Parameter[-fields] not set\n\n")
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	// dbname
+	if len(*dbname) == 0 {
+		fmt.Fprintf(os.Stderr, "Parameter[-fields] not set\n\n")
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	// tablename
+	if len(*tablename) == 0 {
+		fmt.Fprintf(os.Stderr, "Parameter[-fields] not set\n\n")
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	// fields
+	if len(*fields) == 0 {
+		fmt.Fprintf(os.Stderr, "Parameter[-fields] not set\n\n")
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	// batch
 	if *batch < 1 {
-		fmt.Fprintf(os.Stderr, "Parameter[-batch] <= 0: %d\n", *batch)
+		fmt.Fprintf(os.Stderr, "Parameter[-batch] <= 0: %d\n\n", *batch)
 		os.Exit(1)
 	}
 
