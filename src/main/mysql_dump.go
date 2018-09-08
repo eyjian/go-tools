@@ -66,28 +66,28 @@ func main() {
 
 	// dbip
 	if len(*dbip) == 0 {
-		fmt.Fprintf(os.Stderr, "Parameter[-fields] not set\n\n")
+		fmt.Fprintf(os.Stderr, "Parameter[-dbip] not set\n\n")
 		flag.Usage()
 		os.Exit(1)
 	}
 
 	// dbuser
 	if len(*dbuser) == 0 {
-		fmt.Fprintf(os.Stderr, "Parameter[-fields] not set\n\n")
+		fmt.Fprintf(os.Stderr, "Parameter[-dbuser] not set\n\n")
 		flag.Usage()
 		os.Exit(1)
 	}
 
 	// dbname
 	if len(*dbname) == 0 {
-		fmt.Fprintf(os.Stderr, "Parameter[-fields] not set\n\n")
+		fmt.Fprintf(os.Stderr, "Parameter[-dbname] not set\n\n")
 		flag.Usage()
 		os.Exit(1)
 	}
 
 	// tablename
 	if len(*tablename) == 0 {
-		fmt.Fprintf(os.Stderr, "Parameter[-fields] not set\n\n")
+		fmt.Fprintf(os.Stderr, "Parameter[-tablename] not set\n\n")
 		flag.Usage()
 		os.Exit(1)
 	}
