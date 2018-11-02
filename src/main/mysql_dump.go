@@ -55,6 +55,14 @@ var (
 	batch    = flag.Int("batch", 1, "The number of rows every query")
 )
 
+func getStartId(db *sql.DB, incrfield, tablename, condition string) int64 {
+	sql_statement := fmt.Sprintf("SELECT %s FROM %s WHERE %s ORDER BY %s LIMIT 1", incrfield, tablename, condition, incrfield)
+	rows, err := db.Query(sql_statement)
+	if err != nil {
+	}
+	return 0
+}
+
 func main() {
 	flag.Parse()
 
@@ -116,6 +124,10 @@ func main() {
 	defer db.Close() // 作用相当于C++中的自动析构
 	total := 0
 	start := *incr
+
+	if start == 0 {
+		start = getStartId(db, *incrfield, *tablename, *condition)
+	}
 
 	// 设置不锁表
 	_, err = db.Query("SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED")
